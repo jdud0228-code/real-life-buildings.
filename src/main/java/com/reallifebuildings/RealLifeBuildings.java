@@ -37,7 +37,7 @@ public class RealLifeBuildings {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(BuildingBlocks.CONCRETE_PANEL);
             event.accept(BuildingBlocks.FACADE_GLASS);
-            event.accept(BuildingBlocks.OAK_FLOOR);
+            event.accept(BuildingBlocks.OAK_FLOOR);\n            event.accept(BuildingBlocks.RED_BRICK);\n            event.accept(BuildingBlocks.SMOOTH_STONE_PANEL);\n            event.accept(BuildingBlocks.DARK_CONCRETE);
         }
     }
 }
