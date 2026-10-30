@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +20,7 @@ jobs:
         with:
           gradle-version: '8.8'
       - name: Build mod
-        run: gradle build --no-daemon
+        run: gradle --version && gradle build --no-daemon --stacktrace
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
