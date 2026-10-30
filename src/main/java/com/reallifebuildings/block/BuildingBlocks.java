@@ -35,7 +35,9 @@ public final class BuildingBlocks {
     public static final RegistryObject<Block> TERRACE_TILE = register("terrace_tile",
             () -> new Block(Block.Properties.copy(Blocks.STONE_BRICKS)));
 
-    public static final RegistryObject<Block> SMART_LAMP = register("smart_lamp", SmartLampBlock::new);\n\n    private BuildingBlocks() { }
+    public static final RegistryObject<Block> SMART_LAMP = register("smart_lamp", SmartLampBlock::new);
+
+    private BuildingBlocks() { }
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block) {
         RegistryObject<Block> registered = BLOCKS.register(name, block);
