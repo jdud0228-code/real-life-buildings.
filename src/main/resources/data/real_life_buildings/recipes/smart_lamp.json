@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "IRI", " R "],
+  "key": {
+    "G": {"item": "minecraft:glowstone"},
+    "I": {"item": "minecraft:iron_ingot"},
+    "R": {"item": "minecraft:redstone"}
+  },
+  "result": {"item": "real_life_buildings:smart_lamp", "count": 1}
+}
