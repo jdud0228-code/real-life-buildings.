@@ -42,6 +42,7 @@ public class BuilderTabletItem extends Item {
 
         BlockPos base = context.getClickedPos().relative(context.getClickedFace());
         Direction forward = player.getDirection();
+        if (player.isShiftKeyDown()) forward = forward.getClockWise();
         Direction right = forward.getClockWise();
 
         // Validate the complete footprint before changing any blocks.
@@ -85,8 +86,19 @@ public class BuilderTabletItem extends Item {
                 level.setBlock(localPos(base, right, forward, x, 4, z), roof, 3);
             }
         }
+        // Interior partitions divide the floor plan into four functional zones.
+        for (int y = 1; y <= 3; y++) {
+            for (int z = 1; z <= 7; z++) {
+                if (z == 3 || z == 4) continue;
+                level.setBlock(localPos(base, right, forward, 4, y, z), wall, 3);
+            }
+            for (int x = 1; x <= 5; x++) {
+                if (x == 2) continue;
+                level.setBlock(localPos(base, right, forward, x, y, 4), wall, 3);
+            }
+        }
         player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "Современный дом построен!"), true);
+                player.isShiftKeyDown() ? "Дом построен с поворотом!" : "Современный дом построен!"), true);
         return InteractionResult.CONSUME;
     }
 
