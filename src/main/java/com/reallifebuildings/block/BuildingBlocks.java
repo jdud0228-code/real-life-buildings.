@@ -28,6 +28,12 @@ public final class BuildingBlocks {
             () -> new Block(Block.Properties.copy(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> DARK_CONCRETE = register("dark_concrete",
             () -> new Block(Block.Properties.copy(Blocks.BLACK_CONCRETE)));
+    public static final RegistryObject<Block> INTERIOR_WOOD = register("interior_wood",
+            () -> new Block(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> KITCHEN_COUNTER = register("kitchen_counter",
+            () -> new Block(Block.Properties.copy(Blocks.SMOOTH_STONE)));
+    public static final RegistryObject<Block> TERRACE_TILE = register("terrace_tile",
+            () -> new Block(Block.Properties.copy(Blocks.STONE_BRICKS)));
 
     private BuildingBlocks() { }
 
