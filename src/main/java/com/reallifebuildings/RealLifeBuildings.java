@@ -42,6 +42,9 @@ public class RealLifeBuildings {
             event.accept(BuildingBlocks.RED_BRICK);
             event.accept(BuildingBlocks.SMOOTH_STONE_PANEL);
             event.accept(BuildingBlocks.DARK_CONCRETE);
+            event.accept(BuildingBlocks.INTERIOR_WOOD);
+            event.accept(BuildingBlocks.KITCHEN_COUNTER);
+            event.accept(BuildingBlocks.TERRACE_TILE);
         }
     }
 }
