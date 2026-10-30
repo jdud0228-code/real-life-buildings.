@@ -21,7 +21,7 @@ public final class BuildingBlocks {
     public static final RegistryObject<Block> OAK_FLOOR = register("oak_floor",
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
 
-    private BuildingBlocks() { }
+    public static final RegistryObject<Block> RED_BRICK = register("red_brick",\n            () -> new Block(Block.Properties.copy(Blocks.BRICKS)));\n    public static final RegistryObject<Block> SMOOTH_STONE_PANEL = register("smooth_stone_panel",\n            () -> new Block(Block.Properties.copy(Blocks.SMOOTH_STONE)));\n    public static final RegistryObject<Block> DARK_CONCRETE = register("dark_concrete",\n            () -> new Block(Block.Properties.copy(Blocks.BLACK_CONCRETE)));\n\n    private BuildingBlocks() { }
 
     private static RegistryObject<Block> register(String name, Supplier<Block> block) {
         RegistryObject<Block> registered = BLOCKS.register(name, block);
