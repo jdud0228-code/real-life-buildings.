@@ -1,6 +1,7 @@
 package com.reallifebuildings;
 
 import com.reallifebuildings.item.BuilderTabletItem;
+import com.reallifebuildings.block.BuildingBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,12 +26,18 @@ public class RealLifeBuildings {
     public RealLifeBuildings() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modBus);
+        BuildingBlocks.register(modBus);
         modBus.addListener(this::addCreative);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(BUILDER_TABLET);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(BuildingBlocks.CONCRETE_PANEL);
+            event.accept(BuildingBlocks.FACADE_GLASS);
+            event.accept(BuildingBlocks.OAK_FLOOR);
         }
     }
 }
