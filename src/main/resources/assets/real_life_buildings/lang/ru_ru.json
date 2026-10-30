@@ -8,5 +8,8 @@
   "block.real_life_buildings.oak_floor": "Дубовый пол",
   "block.real_life_buildings.red_brick": "Красный кирпич (RLB)",
   "block.real_life_buildings.smooth_stone_panel": "Панель из гладкого камня",
-  "block.real_life_buildings.dark_concrete": "Тёмный бетон"
+  "block.real_life_buildings.dark_concrete": "Тёмный бетон",
+  "block.real_life_buildings.interior_wood": "Дерево для интерьера",
+  "block.real_life_buildings.kitchen_counter": "Кухонная столешница",
+  "block.real_life_buildings.terrace_tile": "Плитка для террасы"
 }
