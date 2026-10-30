@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["PPP", "RMR", "PIP"],
+  "key": {
+    "P": {"item": "minecraft:paper"},
+    "R": {"item": "minecraft:redstone"},
+    "M": {"item": "minecraft:map"},
+    "I": {"item": "minecraft:iron_ingot"}
+  },
+  "result": {"item": "real_life_buildings:cottage_blueprint", "count": 1}
+}
