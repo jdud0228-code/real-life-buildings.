@@ -4,5 +4,8 @@
   "key.categories.real_life_buildings": "REAL LIFE BUILDINGS",
   "block.real_life_buildings.concrete_panel": "Concrete Panel",
   "block.real_life_buildings.facade_glass": "Facade Glass",
-  "block.real_life_buildings.oak_floor": "Oak Floor"
+  "block.real_life_buildings.oak_floor": "Oak Floor",
+  "block.real_life_buildings.red_brick": "RLB Red Bricks",
+  "block.real_life_buildings.smooth_stone_panel": "Smooth Stone Panel",
+  "block.real_life_buildings.dark_concrete": "Dark Concrete"
 }
