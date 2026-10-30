@@ -13,7 +13,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 
@@ -52,7 +51,7 @@ public class BuilderTabletItem extends Item {
             for (int z = 0; z < 9; z++) {
                 for (int y = 0; y <= 4; y++) {
                     BlockPos pos = localPos(base, right, forward, x, y, z);
-                    if (!level.getBlockState(pos).canBeReplaced() || !level.isInWorldBounds(pos)) {
+                    if (!level.isInWorldBounds(pos) || !level.getBlockState(pos).canBeReplaced()) {
                         if (level.isClientSide) {
                             player.displayClientMessage(net.minecraft.network.chat.Component.literal(
                                     "Нет свободного места для дома 7 x 9 блоков."), true);
