@@ -7,5 +7,8 @@
   "block.real_life_buildings.oak_floor": "Oak Floor",
   "block.real_life_buildings.red_brick": "RLB Red Bricks",
   "block.real_life_buildings.smooth_stone_panel": "Smooth Stone Panel",
-  "block.real_life_buildings.dark_concrete": "Dark Concrete"
+  "block.real_life_buildings.dark_concrete": "Dark Concrete",
+  "block.real_life_buildings.interior_wood": "Interior Wood",
+  "block.real_life_buildings.kitchen_counter": "Kitchen Counter",
+  "block.real_life_buildings.terrace_tile": "Terrace Tile"
 }
