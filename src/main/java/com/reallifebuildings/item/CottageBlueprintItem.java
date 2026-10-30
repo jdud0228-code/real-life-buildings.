@@ -24,7 +24,7 @@ public class CottageBlueprintItem extends Item {
         boolean creative = player.getAbilities().instabuild;
         if (!creative && !hasMaterials(player)) {
             if (level.isClientSide) player.displayClientMessage(Component.literal(
-                    "Для коттеджа нужны: дубовый пол x128, бетон x128, тёмный бетон x99, стекло x16, кирпич x32."), true);
+                    "Для коттеджа нужны: дубовый пол x198, бетон x220, тёмный бетон x99, стекло x8, кирпич x71."), true);
             return InteractionResult.FAIL;
         }
         BlockPos base = context.getClickedPos().relative(context.getClickedFace());
@@ -82,11 +82,11 @@ public class CottageBlueprintItem extends Item {
     }
 
     private static boolean hasMaterials(Player p) {
-        return count(p, BuildingBlocks.OAK_FLOOR.get().asItem()) >= 128
-                && count(p, BuildingBlocks.CONCRETE_PANEL.get().asItem()) >= 128
+        return count(p, BuildingBlocks.OAK_FLOOR.get().asItem()) >= 198
+                && count(p, BuildingBlocks.CONCRETE_PANEL.get().asItem()) >= 220
                 && count(p, BuildingBlocks.DARK_CONCRETE.get().asItem()) >= 99
-                && count(p, BuildingBlocks.FACADE_GLASS.get().asItem()) >= 16
-                && count(p, BuildingBlocks.RED_BRICK.get().asItem()) >= 32;
+                && count(p, BuildingBlocks.FACADE_GLASS.get().asItem()) >= 8
+                && count(p, BuildingBlocks.RED_BRICK.get().asItem()) >= 71;
     }
     private static int count(Player p, Item item) {
         int n = 0;
@@ -97,11 +97,11 @@ public class CottageBlueprintItem extends Item {
         return n;
     }
     private static void consume(Player p) {
-        take(p, BuildingBlocks.OAK_FLOOR.get().asItem(), 128);
-        take(p, BuildingBlocks.CONCRETE_PANEL.get().asItem(), 128);
+        take(p, BuildingBlocks.OAK_FLOOR.get().asItem(), 198);
+        take(p, BuildingBlocks.CONCRETE_PANEL.get().asItem(), 220);
         take(p, BuildingBlocks.DARK_CONCRETE.get().asItem(), 99);
-        take(p, BuildingBlocks.FACADE_GLASS.get().asItem(), 16);
-        take(p, BuildingBlocks.RED_BRICK.get().asItem(), 32);
+        take(p, BuildingBlocks.FACADE_GLASS.get().asItem(), 8);
+        take(p, BuildingBlocks.RED_BRICK.get().asItem(), 71);
     }
     private static void take(Player p, Item item, int amount) {
         for (int i = 0; i < p.getInventory().getContainerSize() && amount > 0; i++) {
