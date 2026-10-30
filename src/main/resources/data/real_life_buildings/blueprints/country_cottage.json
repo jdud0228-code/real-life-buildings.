@@ -1,0 +1,27 @@
+{
+  "id": "country_cottage",
+  "name": "Загородный коттедж",
+  "version": 1,
+  "status": "design_preview",
+  "footprint": {
+    "width": 9,
+    "length": 11,
+    "levels": 2
+  },
+  "rooms": [
+    {"name": "Гостиная", "width": 5, "length": 5, "level": 1},
+    {"name": "Кухня", "width": 4, "length": 4, "level": 1},
+    {"name": "Прихожая", "width": 3, "length": 3, "level": 1},
+    {"name": "Спальня", "width": 5, "length": 4, "level": 2},
+    {"name": "Кабинет", "width": 4, "length": 4, "level": 2},
+    {"name": "Ванная", "width": 3, "length": 3, "level": 2}
+  ],
+  "materials": [
+    {"block": "minecraft:spruce_planks", "role": "floor"},
+    {"block": "minecraft:stone_bricks", "role": "foundation"},
+    {"block": "real_life_buildings:concrete_panel", "role": "interior_walls"},
+    {"block": "real_life_buildings:facade_glass", "role": "windows"},
+    {"block": "real_life_buildings:dark_concrete", "role": "roof"}
+  ],
+  "note": "Design preview only. This plan is not yet selectable for automatic construction."
+}
