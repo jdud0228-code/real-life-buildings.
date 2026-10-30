@@ -1,0 +1,26 @@
+{
+  "id": "starter_house",
+  "name": "Стартовый современный дом",
+  "version": 1,
+  "status": "design_preview",
+  "footprint": {
+    "width": 7,
+    "length": 9,
+    "levels": 1
+  },
+  "rooms": [
+    {"name": "Гостиная", "width": 4, "length": 4},
+    {"name": "Кухня", "width": 3, "length": 3},
+    {"name": "Спальня", "width": 3, "length": 3},
+    {"name": "Ванная", "width": 2, "length": 2}
+  ],
+  "materials": [
+    {"block": "real_life_buildings:concrete_panel", "role": "exterior_walls"},
+    {"block": "real_life_buildings:facade_glass", "role": "windows"},
+    {"block": "real_life_buildings:oak_floor", "role": "floor"},
+    {"block": "real_life_buildings:red_brick", "role": "details"},
+    {"block": "real_life_buildings:smooth_stone_panel", "role": "interior"},
+    {"block": "real_life_buildings:dark_concrete", "role": "roof_and_trim"}
+  ],
+  "note": "Preview data only. Automatic placement is not implemented yet."
+}
