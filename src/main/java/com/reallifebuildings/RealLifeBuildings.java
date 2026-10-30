@@ -2,6 +2,7 @@ package com.reallifebuildings;
 
 import com.reallifebuildings.block.BuildingBlocks;
 import com.reallifebuildings.item.BuilderTabletItem;
+import com.reallifebuildings.item.CottageBlueprintItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -19,6 +20,8 @@ public class RealLifeBuildings {
             DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final RegistryObject<Item> BUILDER_TABLET =
             ITEMS.register("builder_tablet", () -> new BuilderTabletItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> COTTAGE_BLUEPRINT =
+            ITEMS.register("cottage_blueprint", () -> new CottageBlueprintItem(new Item.Properties()));
 
     public RealLifeBuildings() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -30,6 +33,7 @@ public class RealLifeBuildings {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(BUILDER_TABLET);
+            event.accept(COTTAGE_BLUEPRINT);
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(BuildingBlocks.CONCRETE_PANEL);
