@@ -51,15 +51,41 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawString(this.font, "Тёмный бетон", centerX + 20, centerY + 18, 0xD8D8D8);
         } else if (selectedPage == 1) {
             graphics.drawCenteredString(this.font, "ПЕРВЫЙ ПРОЕКТ: СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
-            graphics.drawString(this.font, "Габариты: 7 x 9 блоков, 1 этаж", centerX - 140, centerY - 12, 0xD8D8D8);
-            graphics.drawString(this.font, "Комнаты: гостиная, кухня, спальня, ванная", centerX - 140, centerY + 5, 0xD8D8D8);
-            graphics.drawString(this.font, "Материалы: бетон, стекло, дуб, кирпич", centerX - 140, centerY + 22, 0xD8D8D8);
-            graphics.drawCenteredString(this.font, "План подготовлен; авторазмещение ещё в разработке", centerX, centerY + 52, 0xA5D6A7);
+            graphics.drawString(this.font, "7 x 9 блоков • 1 этаж", centerX - 145, centerY - 12, 0xD8D8D8);
+            graphics.drawString(this.font, "Гостиная", centerX - 145, centerY + 8, 0xD8D8D8);
+            graphics.drawString(this.font, "Кухня", centerX - 145, centerY + 23, 0xD8D8D8);
+            graphics.drawString(this.font, "Спальня", centerX - 145, centerY + 38, 0xD8D8D8);
+            graphics.drawString(this.font, "Ванная", centerX - 145, centerY + 53, 0xD8D8D8);
+            renderHouseBlueprint(graphics, centerX + 34, centerY - 8);
+            graphics.drawCenteredString(this.font, "Схема комнат • авторазмещение будет добавлено позже", centerX, centerY + 78, 0xA5D6A7);
         } else {
             graphics.drawCenteredString(this.font, "ИНСТРУМЕНТЫ СТРОИТЕЛЯ", centerX, centerY - 28, 0xFFFFFF);
             graphics.drawCenteredString(this.font, "Редактор планов и режим размещения — в разработке", centerX, centerY, 0xCCCCCC);
         }
         super.render(graphics, mouseX, mouseY, partialTick);
+    }
+
+    private void renderHouseBlueprint(GuiGraphics graphics, int x, int y) {
+        int cell = 13;
+        // Top-down 7 x 9 room plan. Colors distinguish room zones.
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 7; col++) {
+                int color;
+                if (row < 4 && col < 4) color = 0xFF547B9A;       // living room
+                else if (row < 4) color = 0xFF9A8054;             // kitchen
+                else if (col < 4) color = 0xFF6D8A65;             // bedroom
+                else color = 0xFF8A6D8A;                          // bathroom
+                int x1 = x + col * cell;
+                int y1 = y + row * cell;
+                graphics.fill(x1, y1, x1 + cell - 1, y1 + cell - 1, color);
+                graphics.fill(x1, y1, x1 + cell - 1, y1 + 1, 0xFF20252D);
+                graphics.fill(x1, y1, x1 + 1, y1 + cell - 1, 0xFF20252D);
+            }
+        }
+        graphics.fill(x, y, x + 7 * cell, y + 1, 0xFFFFFFFF);
+        graphics.fill(x, y + 9 * cell - 1, x + 7 * cell, y + 9 * cell, 0xFFFFFFFF);
+        graphics.fill(x, y, x + 1, y + 9 * cell, 0xFFFFFFFF);
+        graphics.fill(x + 7 * cell - 1, y, x + 7 * cell, y + 9 * cell, 0xFFFFFFFF);
     }
 
     @Override
