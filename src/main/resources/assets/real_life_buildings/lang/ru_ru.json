@@ -4,5 +4,8 @@
   "key.categories.real_life_buildings": "REAL LIFE BUILDINGS",
   "block.real_life_buildings.concrete_panel": "Бетонная панель",
   "block.real_life_buildings.facade_glass": "Фасадное стекло",
-  "block.real_life_buildings.oak_floor": "Дубовый пол"
+  "block.real_life_buildings.oak_floor": "Дубовый пол",
+  "block.real_life_buildings.red_brick": "Красный кирпич (RLB)",
+  "block.real_life_buildings.smooth_stone_panel": "Панель из гладкого камня",
+  "block.real_life_buildings.dark_concrete": "Тёмный бетон"
 }
