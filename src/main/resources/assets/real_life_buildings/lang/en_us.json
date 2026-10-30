@@ -1,5 +1,8 @@
 {
   "item.real_life_buildings.builder_tablet": "Builder Tablet",
   "key.real_life_buildings.open_tablet": "Open Builder Tablet",
-  "key.categories.real_life_buildings": "REAL LIFE BUILDINGS"
+  "key.categories.real_life_buildings": "REAL LIFE BUILDINGS",
+  "block.real_life_buildings.concrete_panel": "Concrete Panel",
+  "block.real_life_buildings.facade_glass": "Facade Glass",
+  "block.real_life_buildings.oak_floor": "Oak Floor"
 }
