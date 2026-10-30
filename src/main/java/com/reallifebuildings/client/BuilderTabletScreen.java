@@ -69,7 +69,9 @@ public class BuilderTabletScreen extends Screen {
                 graphics.drawString(this.font, "9 x 11 блоков • 2 этажа", centerX - 145, centerY - 12, 0xD8D8D8);
                 graphics.drawString(this.font, "1 этаж: гостиная, кухня, прихожая", centerX - 145, centerY + 8, 0xD8D8D8);
                 graphics.drawString(this.font, "2 этаж: спальня, кабинет, ванная", centerX - 145, centerY + 23, 0xD8D8D8);
-                graphics.drawCenteredString(this.font, "Чертёж в каталоге — постройка ещё в разработке", centerX, centerY + 78, 0xA5D6A7);
+                graphics.drawCenteredString(this.font, "Строится отдельным чертежом в руке", centerX, centerY + 70, 0xA5D6A7);
+                graphics.drawCenteredString(this.font, "Материалы: пол 198 • бетон 220 • крыша 99", centerX, centerY + 84, 0xD8D8D8);
+                graphics.drawCenteredString(this.font, "Стекло 8 • кирпич 71", centerX, centerY + 98, 0xD8D8D8);
             }        } else {
             graphics.drawCenteredString(this.font, "ИНСТРУМЕНТЫ СТРОИТЕЛЯ", centerX, centerY - 28, 0xFFFFFF);
             graphics.drawCenteredString(this.font, "Построить: планшет в руке → ПКМ по земле", centerX, centerY - 4, 0xCCCCCC);
