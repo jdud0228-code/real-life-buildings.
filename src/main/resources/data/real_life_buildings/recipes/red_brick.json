@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    }
+  },
+  "result": {
+    "item": "real_life_buildings:red_brick",
+    "count": 4
+  }
+}
