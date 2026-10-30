@@ -32,10 +32,12 @@ public class BuilderTabletItem extends Item {
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
         Level level = context.getLevel();
-        if (player == null || !player.getAbilities().instabuild) {
-            if (player != null && level.isClientSide) {
+        if (player == null) return InteractionResult.FAIL;
+        boolean creative = player.getAbilities().instabuild;
+        if (!creative && !hasBuildingMaterials(player)) {
+            if (level.isClientSide) {
                 player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                        "Режим постройки дома пока доступен только в творческом режиме."), true);
+                        "Не хватает материалов: дубовый пол x64, бетонная панель x64, тёмный бетон x64, стекло x8, кирпич x16."), true);
             }
             return InteractionResult.FAIL;
         }
@@ -61,6 +63,7 @@ public class BuilderTabletItem extends Item {
             }
         }
         if (level.isClientSide) return InteractionResult.SUCCESS;
+        if (!creative) consumeBuildingMaterials(player);
 
         BlockState floor = BuildingBlocks.OAK_FLOOR.get().defaultBlockState();
         BlockState wall = BuildingBlocks.CONCRETE_PANEL.get().defaultBlockState();
@@ -100,6 +103,41 @@ public class BuilderTabletItem extends Item {
         player.displayClientMessage(net.minecraft.network.chat.Component.literal(
                 player.isShiftKeyDown() ? "Дом построен с поворотом!" : "Современный дом построен!"), true);
         return InteractionResult.CONSUME;
+    }
+
+    private static boolean hasBuildingMaterials(Player player) {
+        return countItem(player, BuildingBlocks.OAK_FLOOR.get().asItem()) >= 64
+                && countItem(player, BuildingBlocks.CONCRETE_PANEL.get().asItem()) >= 64
+                && countItem(player, BuildingBlocks.DARK_CONCRETE.get().asItem()) >= 64
+                && countItem(player, BuildingBlocks.FACADE_GLASS.get().asItem()) >= 8
+                && countItem(player, BuildingBlocks.RED_BRICK.get().asItem()) >= 16;
+    }
+
+    private static int countItem(Player player, net.minecraft.world.item.Item item) {
+        int count = 0;
+        for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
+            ItemStack stack = player.getInventory().getItem(slot);
+            if (stack.is(item)) count += stack.getCount();
+        }
+        return count;
+    }
+
+    private static void consumeBuildingMaterials(Player player) {
+        consumeItem(player, BuildingBlocks.OAK_FLOOR.get().asItem(), 64);
+        consumeItem(player, BuildingBlocks.CONCRETE_PANEL.get().asItem(), 64);
+        consumeItem(player, BuildingBlocks.DARK_CONCRETE.get().asItem(), 64);
+        consumeItem(player, BuildingBlocks.FACADE_GLASS.get().asItem(), 8);
+        consumeItem(player, BuildingBlocks.RED_BRICK.get().asItem(), 16);
+    }
+
+    private static void consumeItem(Player player, net.minecraft.world.item.Item item, int amount) {
+        for (int slot = 0; slot < player.getInventory().getContainerSize() && amount > 0; slot++) {
+            ItemStack stack = player.getInventory().getItem(slot);
+            if (!stack.is(item)) continue;
+            int taken = Math.min(amount, stack.getCount());
+            stack.shrink(taken);
+            amount -= taken;
+        }
     }
 
     private static BlockPos localPos(BlockPos base, Direction right, Direction forward,
