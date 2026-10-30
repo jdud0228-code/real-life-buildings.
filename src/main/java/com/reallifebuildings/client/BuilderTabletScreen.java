@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 
 public class BuilderTabletScreen extends Screen {
     private int selectedPage = 0;
+    private int selectedProject = 0;
     private static final String[] PAGES = {"МАТЕРИАЛЫ", "ПРОЕКТЫ", "ИНСТРУМЕНТЫ"};
 
     private BuilderTabletScreen() {
@@ -27,6 +28,12 @@ public class BuilderTabletScreen extends Screen {
                 clearWidgets();
                 init();
             }).bounds(left + i * 102, this.height / 2 - 65, 98, 20).build());
+        }
+        if (selectedPage == 1) {
+            this.addRenderableWidget(Button.builder(Component.literal("Дом"), button -> selectedProject = 0)
+                    .bounds(this.width / 2 - 145, this.height / 2 - 35, 65, 20).build());
+            this.addRenderableWidget(Button.builder(Component.literal("Коттедж"), button -> selectedProject = 1)
+                    .bounds(this.width / 2 - 75, this.height / 2 - 35, 80, 20).build());
         }
         this.addRenderableWidget(Button.builder(Component.literal("ЗАКРЫТЬ"), button -> onClose())
                 .bounds(this.width / 2 - 50, this.height / 2 + 90, 100, 20).build());
@@ -51,17 +58,19 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawString(this.font, "Тёмный бетон", centerX + 20, centerY + 18, 0xD8D8D8);
             graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 58, 0xA5D6A7);
         } else if (selectedPage == 1) {
-            graphics.drawCenteredString(this.font, "ПЕРВЫЙ ПРОЕКТ: СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
-            graphics.drawString(this.font, "7 x 9 блоков • 1 этаж", centerX - 145, centerY - 12, 0xD8D8D8);
-            graphics.drawString(this.font, "Гостиная", centerX - 145, centerY + 8, 0xD8D8D8);
-            graphics.drawString(this.font, "Кухня", centerX - 145, centerY + 23, 0xD8D8D8);
-            graphics.drawString(this.font, "Спальня", centerX - 145, centerY + 38, 0xD8D8D8);
-            graphics.drawString(this.font, "Ванная", centerX - 145, centerY + 53, 0xD8D8D8);
-            renderHouseBlueprint(graphics, centerX + 34, centerY - 8);
-            graphics.drawCenteredString(this.font, "Стоимость постройки в выживании:", centerX, centerY + 72, 0xFFFFFF);
-            graphics.drawCenteredString(this.font, "Пол x64 • бетон x64 • тёмный бетон x64", centerX, centerY + 85, 0xD8D8D8);
-            graphics.drawCenteredString(this.font, "Стекло x8 • кирпич x16", centerX, centerY + 98, 0xD8D8D8);
-        } else {
+            if (selectedProject == 0) {
+                graphics.drawCenteredString(this.font, "СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
+                graphics.drawString(this.font, "7 x 9 блоков • 1 этаж", centerX - 145, centerY - 12, 0xD8D8D8);
+                graphics.drawString(this.font, "Гостиная • кухня • спальня • ванная", centerX - 145, centerY + 8, 0xD8D8D8);
+                renderHouseBlueprint(graphics, centerX + 34, centerY - 8);
+                graphics.drawCenteredString(this.font, "Можно построить планшетом", centerX, centerY + 78, 0xA5D6A7);
+            } else {
+                graphics.drawCenteredString(this.font, "ЗАГОРОДНЫЙ КОТТЕДЖ", centerX, centerY - 35, 0xFFFFFF);
+                graphics.drawString(this.font, "9 x 11 блоков • 2 этажа", centerX - 145, centerY - 12, 0xD8D8D8);
+                graphics.drawString(this.font, "1 этаж: гостиная, кухня, прихожая", centerX - 145, centerY + 8, 0xD8D8D8);
+                graphics.drawString(this.font, "2 этаж: спальня, кабинет, ванная", centerX - 145, centerY + 23, 0xD8D8D8);
+                graphics.drawCenteredString(this.font, "Чертёж в каталоге — постройка ещё в разработке", centerX, centerY + 78, 0xA5D6A7);
+            }        } else {
             graphics.drawCenteredString(this.font, "ИНСТРУМЕНТЫ СТРОИТЕЛЯ", centerX, centerY - 28, 0xFFFFFF);
             graphics.drawCenteredString(this.font, "Построить: планшет в руке → ПКМ по земле", centerX, centerY - 4, 0xCCCCCC);
             graphics.drawCenteredString(this.font, "Повернуть дом: зажми Shift при ПКМ", centerX, centerY + 14, 0xCCCCCC);
