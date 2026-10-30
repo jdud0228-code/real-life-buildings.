@@ -50,8 +50,11 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawString(this.font, "Гладкая каменная панель", centerX + 20, centerY + 3, 0xD8D8D8);
             graphics.drawString(this.font, "Тёмный бетон", centerX + 20, centerY + 18, 0xD8D8D8);
         } else if (selectedPage == 1) {
-            graphics.drawCenteredString(this.font, "БИБЛИОТЕКА ПРОЕКТОВ", centerX, centerY - 28, 0xFFFFFF);
-            graphics.drawCenteredString(this.font, "Шаблоны домов появятся в следующих обновлениях", centerX, centerY, 0xCCCCCC);
+            graphics.drawCenteredString(this.font, "ПЕРВЫЙ ПРОЕКТ: СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
+            graphics.drawString(this.font, "Габариты: 7 x 9 блоков, 1 этаж", centerX - 140, centerY - 12, 0xD8D8D8);
+            graphics.drawString(this.font, "Комнаты: гостиная, кухня, спальня, ванная", centerX - 140, centerY + 5, 0xD8D8D8);
+            graphics.drawString(this.font, "Материалы: бетон, стекло, дуб, кирпич", centerX - 140, centerY + 22, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "План подготовлен; авторазмещение ещё в разработке", centerX, centerY + 52, 0xA5D6A7);
         } else {
             graphics.drawCenteredString(this.font, "ИНСТРУМЕНТЫ СТРОИТЕЛЯ", centerX, centerY - 28, 0xFFFFFF);
             graphics.drawCenteredString(this.font, "Редактор планов и режим размещения — в разработке", centerX, centerY, 0xCCCCCC);
