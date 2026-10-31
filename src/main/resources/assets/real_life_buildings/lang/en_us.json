@@ -20,5 +20,8 @@
   "container.real_life_buildings.wardrobe": "Wardrobe Storage",
   "block.real_life_buildings.microwave": "Microwave",
   "block.real_life_buildings.fridge": "Refrigerator",
-  "container.real_life_buildings.fridge": "Refrigerator"
+  "container.real_life_buildings.fridge": "Refrigerator",
+  "item.real_life_buildings.sandwich": "Sandwich",
+  "item.real_life_buildings.canned_food": "Canned Food",
+  "item.real_life_buildings.fruit_juice": "Fruit Juice"
 }
