@@ -46,7 +46,7 @@ public class BuilderTabletScreen extends Screen {
         this.renderBackground(graphics);
         int centerX = this.width / 2;
         int centerY = this.height / 2;
-        graphics.fill(centerX - 205, centerY - 82, centerX + 205, centerY + 145, 0xF0181D24);\n        graphics.fill(centerX - 205, centerY - 82, centerX + 205, centerY - 80, 0xFF8FBF91);
+        graphics.fill(centerX - 205, centerY - 82, centerX + 205, centerY + 160, 0xF0181D24);\n        graphics.fill(centerX - 205, centerY - 82, centerX + 205, centerY - 80, 0xFF8FBF91);
         graphics.drawCenteredString(this.font, "REAL LIFE BUILDINGS", centerX, centerY - 105, 0xFFFFFF);
         graphics.drawCenteredString(this.font, "ПЛАНШЕТ СТРОИТЕЛЯ", centerX, centerY - 88, 0xA5D6A7);
 
@@ -54,36 +54,36 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawCenteredString(this.font, "МАТЕРИАЛЫ И ОБОРУДОВАНИЕ", centerX, centerY - 32, 0xFFFFFF);
             graphics.drawString(this.font, "СТРОИТЕЛЬСТВО", centerX - 175, centerY - 12, 0xA5D6A7);
             graphics.drawString(this.font, "ИНТЕРЬЕР И ТЕХНИКА", centerX + 20, centerY - 12, 0xA5D6A7);
-            drawMaterial(graphics, BuildingBlocks.CONCRETE_PANEL.get(), "Бетонная панель", centerX - 175, centerY + 7);
-            drawMaterial(graphics, BuildingBlocks.FACADE_GLASS.get(), "Фасадное стекло", centerX - 175, centerY + 26);
-            drawMaterial(graphics, BuildingBlocks.OAK_FLOOR.get(), "Дубовый пол", centerX - 175, centerY + 45);
-            drawMaterial(graphics, BuildingBlocks.RED_BRICK.get(), "Красный кирпич", centerX - 175, centerY + 64);
-            drawMaterial(graphics, BuildingBlocks.SMOOTH_STONE_PANEL.get(), "Каменная панель", centerX - 175, centerY + 83);
-            drawMaterial(graphics, BuildingBlocks.DARK_CONCRETE.get(), "Тёмный бетон", centerX - 175, centerY + 102);
-            drawMaterial(graphics, BuildingBlocks.INTERIOR_WOOD.get(), "Дерево интерьера", centerX - 175, centerY + 121);
-            drawMaterial(graphics, BuildingBlocks.TERRACE_TILE.get(), "Плитка террасы", centerX - 175, centerY + 140);
-            drawMaterial(graphics, BuildingBlocks.KITCHEN_COUNTER.get(), "Кухонная стойка", centerX + 20, centerY + 7);
-            drawMaterial(graphics, BuildingBlocks.FRIDGE.get(), "Холодильник", centerX + 20, centerY + 26);
-            drawMaterial(graphics, BuildingBlocks.MICROWAVE.get(), "Микроволновка", centerX + 20, centerY + 45);
-            drawMaterial(graphics, BuildingBlocks.SMART_LAMP.get(), "Умная лампа", centerX + 20, centerY + 64);
-            drawMaterial(graphics, BuildingBlocks.LIVING_ROOM_CHAIR.get(), "Кресло", centerX + 20, centerY + 83);
-            drawMaterial(graphics, BuildingBlocks.SOFA.get(), "Диван", centerX + 20, centerY + 102);
-            drawMaterial(graphics, BuildingBlocks.WARDROBE.get(), "Шкаф", centerX + 20, centerY + 121);
-            drawMaterial(graphics, BuildingBlocks.DOORBELL.get(), "Дверной звонок", centerX + 20, centerY + 140);
-            graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 164, 0xA5D6A7);
+            drawMaterial(graphics, BuildingBlocks.CONCRETE_PANEL.get(), "Бетонная панель", centerX - 175, centerY - 8);
+            drawMaterial(graphics, BuildingBlocks.FACADE_GLASS.get(), "Фасадное стекло", centerX - 175, centerY + 8);
+            drawMaterial(graphics, BuildingBlocks.OAK_FLOOR.get(), "Дубовый пол", centerX - 175, centerY + 24);
+            drawMaterial(graphics, BuildingBlocks.RED_BRICK.get(), "Красный кирпич", centerX - 175, centerY + 40);
+            drawMaterial(graphics, BuildingBlocks.SMOOTH_STONE_PANEL.get(), "Каменная панель", centerX - 175, centerY + 56);
+            drawMaterial(graphics, BuildingBlocks.DARK_CONCRETE.get(), "Тёмный бетон", centerX - 175, centerY + 72);
+            drawMaterial(graphics, BuildingBlocks.INTERIOR_WOOD.get(), "Дерево интерьера", centerX - 175, centerY + 88);
+            drawMaterial(graphics, BuildingBlocks.TERRACE_TILE.get(), "Плитка террасы", centerX - 175, centerY + 104);
+            drawMaterial(graphics, BuildingBlocks.KITCHEN_COUNTER.get(), "Кухонная стойка", centerX + 20, centerY - 8);
+            drawMaterial(graphics, BuildingBlocks.FRIDGE.get(), "Холодильник", centerX + 20, centerY + 8);
+            drawMaterial(graphics, BuildingBlocks.MICROWAVE.get(), "Микроволновка", centerX + 20, centerY + 24);
+            drawMaterial(graphics, BuildingBlocks.SMART_LAMP.get(), "Умная лампа", centerX + 20, centerY + 40);
+            drawMaterial(graphics, BuildingBlocks.LIVING_ROOM_CHAIR.get(), "Кресло", centerX + 20, centerY + 56);
+            drawMaterial(graphics, BuildingBlocks.SOFA.get(), "Диван", centerX + 20, centerY + 72);
+            drawMaterial(graphics, BuildingBlocks.WARDROBE.get(), "Шкаф", centerX + 20, centerY + 88);
+            drawMaterial(graphics, BuildingBlocks.DOORBELL.get(), "Дверной звонок", centerX + 20, centerY + 104);
+            graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 119, 0xA5D6A7);
         } else if (selectedPage == 1) {
             if (selectedProject == 0) {
                 graphics.drawCenteredString(this.font, "СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
                 graphics.drawString(this.font, "7 x 9 блоков • 1 этаж", centerX - 145, centerY - 12, 0xD8D8D8);
                 graphics.drawString(this.font, "Гостиная • кухня • спальня • ванная", centerX - 145, centerY + 8, 0xD8D8D8);
                 renderHouseBlueprint(graphics, centerX + 34, centerY - 8);
-                graphics.drawCenteredString(this.font, "Можно построить планшетом", centerX, centerY + 78, 0xA5D6A7);
+                graphics.drawCenteredString(this.font, "Можно построить планшетом", centerX, centerY - 88, 0xA5D6A7);
             } else {
                 graphics.drawCenteredString(this.font, "ЗАГОРОДНЫЙ КОТТЕДЖ", centerX, centerY - 35, 0xFFFFFF);
                 graphics.drawString(this.font, "9 x 11 блоков • 2 этажа", centerX - 145, centerY - 12, 0xD8D8D8);
                 graphics.drawString(this.font, "1 этаж: гостиная, кухня, прихожая", centerX - 145, centerY + 8, 0xD8D8D8);
                 graphics.drawString(this.font, "2 этаж: спальня, кабинет, ванная", centerX - 145, centerY + 23, 0xD8D8D8);
-                graphics.drawCenteredString(this.font, "Строится отдельным чертежом в руке", centerX, centerY + 70, 0xA5D6A7);
+                graphics.drawCenteredString(this.font, "Строится отдельным чертежом в руке", centerX, centerY - 80, 0xA5D6A7);
                 graphics.drawCenteredString(this.font, "Материалы: пол 198 • бетон 220 • крыша 99", centerX, centerY + 84, 0xD8D8D8);
                 graphics.drawCenteredString(this.font, "Стекло 8 • кирпич 71", centerX, centerY + 98, 0xD8D8D8);
             }        } else {
@@ -92,7 +92,7 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawCenteredString(this.font, "Повернуть дом: зажми Shift при ПКМ", centerX, centerY + 14, 0xCCCCCC);
             graphics.drawCenteredString(this.font, "Сначала проверь свободную площадку 7 x 9", centerX, centerY + 32, 0xCCCCCC);
             graphics.drawCenteredString(this.font, "Мебель: кресло и диван — можно использовать как сиденья", centerX, centerY + 48, 0xD8D8D8);
-            graphics.drawCenteredString(this.font, "Шкаф: 27 слотов для хранения предметов", centerX, centerY + 64, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "Шкаф: 27 слотов для хранения предметов", centerX, centerY + 40, 0xD8D8D8);
             graphics.drawCenteredString(this.font, "Умная лампа: ПКМ включает и выключает свет", centerX, centerY + 80, 0xD8D8D8);
             graphics.drawCenteredString(this.font, "Звонок: ПКМ воспроизводит сигнал", centerX, centerY + 96, 0xA5D6A7);
         }
