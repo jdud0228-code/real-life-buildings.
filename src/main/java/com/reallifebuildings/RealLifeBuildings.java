@@ -49,6 +49,7 @@ public class RealLifeBuildings {
             event.accept(BuildingBlocks.LIVING_ROOM_CHAIR);
             event.accept(BuildingBlocks.SOFA);
             event.accept(BuildingBlocks.WARDROBE);
+            event.accept(BuildingBlocks.DOORBELL);
         }
     }
 }
