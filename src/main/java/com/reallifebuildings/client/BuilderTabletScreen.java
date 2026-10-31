@@ -56,7 +56,9 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawString(this.font, "Красный кирпич", centerX + 20, centerY - 12, 0xD8D8D8);
             graphics.drawString(this.font, "Гладкая каменная панель", centerX + 20, centerY + 3, 0xD8D8D8);
             graphics.drawString(this.font, "Тёмный бетон", centerX + 20, centerY + 18, 0xD8D8D8);
-            graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 58, 0xA5D6A7);
+            graphics.drawString(this.font, "Дерево интерьера", centerX - 135, centerY + 38, 0xD8D8D8);
+            graphics.drawString(this.font, "Плитка террасы", centerX + 20, centerY + 38, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 66, 0xA5D6A7);
         } else if (selectedPage == 1) {
             if (selectedProject == 0) {
                 graphics.drawCenteredString(this.font, "СОВРЕМЕННЫЙ ДОМ", centerX, centerY - 35, 0xFFFFFF);
@@ -77,7 +79,10 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawCenteredString(this.font, "Построить: планшет в руке → ПКМ по земле", centerX, centerY - 4, 0xCCCCCC);
             graphics.drawCenteredString(this.font, "Повернуть дом: зажми Shift при ПКМ", centerX, centerY + 14, 0xCCCCCC);
             graphics.drawCenteredString(this.font, "Сначала проверь свободную площадку 7 x 9", centerX, centerY + 32, 0xCCCCCC);
-            graphics.drawCenteredString(this.font, "Редактор собственных планов — следующий этап", centerX, centerY + 58, 0xA5D6A7);
+            graphics.drawCenteredString(this.font, "Мебель: кресло и диван — можно использовать как сиденья", centerX, centerY + 48, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "Шкаф: 27 слотов для хранения предметов", centerX, centerY + 64, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "Умная лампа: ПКМ включает и выключает свет", centerX, centerY + 80, 0xD8D8D8);
+            graphics.drawCenteredString(this.font, "Звонок: ПКМ воспроизводит сигнал", centerX, centerY + 96, 0xA5D6A7);
         }
         super.render(graphics, mouseX, mouseY, partialTick);
     }
