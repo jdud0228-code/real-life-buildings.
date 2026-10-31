@@ -47,8 +47,8 @@ public class KitchenApplianceBlock extends Block {
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if (level.isClientSide) return InteractionResult.SUCCESS;
         if (state.getValue(LIT)) {
-            player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                    "Микроволновка уже работает"), true);
+            player.displayClientMessage(net.minecraft.network.chat.Component.translatable(
+                    "message.real_life_buildings.microwave_busy"), true);
             return InteractionResult.CONSUME;
         }
         for (ItemStack stack : player.getInventory().items) {
@@ -61,13 +61,13 @@ public class KitchenApplianceBlock extends Block {
                 level.scheduleTick(pos, this, 40);
                 level.playSound(null, pos, SoundEvents.FURNACE_FIRE_CRACKLE,
                         SoundSource.BLOCKS, 0.7F, 1.0F);
-                player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                        "Готово: " + result.getHoverName().getString()), true);
+                player.displayClientMessage(net.minecraft.network.chat.Component.translatable(
+                        "message.real_life_buildings.microwave_cooked", result.getHoverName()), true);
                 return InteractionResult.CONSUME;
             }
         }
-        player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "Положи сырую еду в инвентарь и нажми ещё раз"), true);
+        player.displayClientMessage(net.minecraft.network.chat.Component.translatable(
+                "message.real_life_buildings.microwave_no_food"), true);
         level.playSound(null, pos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS, 0.5F, 0.8F);
         return InteractionResult.CONSUME;
     }
