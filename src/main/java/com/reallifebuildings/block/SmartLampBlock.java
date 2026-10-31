@@ -30,13 +30,26 @@ public class SmartLampBlock extends Block {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return defaultBlockState();
+        return defaultBlockState().setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos()));
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block,
+                                BlockPos neighborPos, boolean movedByPiston) {
+        if (!level.isClientSide) {
+            boolean powered = level.hasNeighborSignal(pos);
+            if (state.getValue(LIT) != powered) {
+                level.setBlock(pos, state.setValue(LIT, powered), 3);
+            }
+        }
     }
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
                                  InteractionHand hand, BlockHitResult hit) {
+        if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if (level.isClientSide) return InteractionResult.SUCCESS;
+        if (level.hasNeighborSignal(pos)) return InteractionResult.CONSUME;
         boolean turnOn = !state.getValue(LIT);
         level.setBlock(pos, state.setValue(LIT, turnOn), 3);
         level.playSound(null, pos, turnOn
