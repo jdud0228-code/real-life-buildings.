@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CottageBlueprintItem extends Item {
@@ -65,6 +67,14 @@ public class CottageBlueprintItem extends Item {
                 level.setBlock(at(base, right, forward, x, y, z), chosen, 3);
             }
         }
+        // Add a working two-block entrance door.
+        BlockState doorLower = Blocks.OAK_DOOR.defaultBlockState()
+                .setValue(DoorBlock.FACING, forward)
+                .setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
+        level.setBlock(at(base, right, forward, 4, 1, 0), doorLower, 3);
+        level.setBlock(at(base, right, forward, 4, 2, 0),
+                doorLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), 3);
+
         // Simple interior partitions on both floors.
         for (int y : new int[]{1, 2, 3, 4, 6, 7, 8}) {
             int divider = y < 5 ? 5 : 4;
