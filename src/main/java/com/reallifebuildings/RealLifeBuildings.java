@@ -1,6 +1,7 @@
 package com.reallifebuildings;
 
 import com.reallifebuildings.block.BuildingBlocks;
+import com.reallifebuildings.block.ModBlockEntities;
 import com.reallifebuildings.item.BuilderTabletItem;
 import com.reallifebuildings.item.CottageBlueprintItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -27,6 +28,7 @@ public class RealLifeBuildings {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modBus);
         BuildingBlocks.register(modBus);
+        ModBlockEntities.register(modBus);
         modBus.addListener(this::addCreative);
     }
 
