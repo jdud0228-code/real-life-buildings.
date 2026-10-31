@@ -69,7 +69,7 @@ public class BuilderTabletItem extends Item {
 
         BlockState floor = BuildingBlocks.OAK_FLOOR.get().defaultBlockState();
         BlockState wall = BuildingBlocks.CONCRETE_PANEL.get().defaultBlockState();
-        BlockState glass = BuildingBlocks.FACADE_GLASS.get().defaultBlockState();
+        BlockState glass = net.minecraft.world.level.block.Blocks.GLASS_PANE.defaultBlockState();
         BlockState roof = BuildingBlocks.DARK_CONCRETE.get().defaultBlockState();
         BlockState detail = BuildingBlocks.RED_BRICK.get().defaultBlockState();
 
