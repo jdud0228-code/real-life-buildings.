@@ -40,7 +40,7 @@ public final class BuildingBlocks {
     public static final RegistryObject<Block> SOFA = register("sofa",
             () -> new Block(Block.Properties.copy(Blocks.RED_WOOL)));
     public static final RegistryObject<Block> WARDROBE = register("wardrobe",
-            () -> new Block(Block.Properties.copy(Blocks.BARREL)));
+            () -> new WardrobeBlock(Block.Properties.copy(Blocks.BARREL)));
     public static final RegistryObject<Block> DOORBELL = register("doorbell",
             () -> new DoorbellBlock(Block.Properties.copy(Blocks.STONE).strength(1.5F)));
 
