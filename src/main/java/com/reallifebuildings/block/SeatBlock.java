@@ -24,7 +24,6 @@ public class SeatBlock extends Block {
         if (!level.isClientSide) {
             ArmorStand seat = new ArmorStand(level, pos.getX() + 0.5, pos.getY() + 0.15, pos.getZ() + 0.5);
             seat.setInvisible(true);
-            seat.setMarker(true);
             seat.setNoGravity(true);
             seat.setInvulnerable(true);
             seat.getPersistentData().putBoolean("real_life_buildings_seat", true);
