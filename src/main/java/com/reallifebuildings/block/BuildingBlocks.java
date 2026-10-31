@@ -36,6 +36,12 @@ public final class BuildingBlocks {
             () -> new Block(Block.Properties.copy(Blocks.STONE_BRICKS)));
 
     public static final RegistryObject<Block> SMART_LAMP = register("smart_lamp", SmartLampBlock::new);
+    public static final RegistryObject<Block> LIVING_ROOM_CHAIR = register("living_room_chair",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> SOFA = register("sofa",
+            () -> new Block(Block.Properties.copy(Blocks.RED_WOOL)));
+    public static final RegistryObject<Block> WARDROBE = register("wardrobe",
+            () -> new Block(Block.Properties.copy(Blocks.BARREL)));
 
     private BuildingBlocks() { }
 
