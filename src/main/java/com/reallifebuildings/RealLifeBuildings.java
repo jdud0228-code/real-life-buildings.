@@ -46,6 +46,7 @@ public class RealLifeBuildings {
             event.accept(BuildingBlocks.DARK_CONCRETE);
             event.accept(BuildingBlocks.INTERIOR_WOOD);
             event.accept(BuildingBlocks.KITCHEN_COUNTER);
+            event.accept(BuildingBlocks.MICROWAVE);
             event.accept(BuildingBlocks.TERRACE_TILE);
             event.accept(BuildingBlocks.SMART_LAMP);
             event.accept(BuildingBlocks.LIVING_ROOM_CHAIR);
