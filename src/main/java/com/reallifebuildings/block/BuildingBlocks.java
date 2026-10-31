@@ -25,7 +25,7 @@ public final class BuildingBlocks {
     public static final RegistryObject<Block> RED_BRICK = register("red_brick",
             () -> new Block(Block.Properties.copy(Blocks.BRICKS)));
     public static final RegistryObject<Block> SMOOTH_STONE_PANEL = register("smooth_stone_panel",
-            () -> new Block(Block.Properties.copy(Blocks.SMOOTH_STONE)));
+            () -> new KitchenCounterBlock(Block.Properties.copy(Blocks.SMOOTH_STONE)));
     public static final RegistryObject<Block> DARK_CONCRETE = register("dark_concrete",
             () -> new Block(Block.Properties.copy(Blocks.BLACK_CONCRETE)));
     public static final RegistryObject<Block> INTERIOR_WOOD = register("interior_wood",
