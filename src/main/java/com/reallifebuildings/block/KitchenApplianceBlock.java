@@ -73,6 +73,17 @@ public class KitchenApplianceBlock extends Block {
     }
 
     @Override
+    public boolean isSignalSource(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getSignal(BlockState state, net.minecraft.world.level.BlockGetter level,
+                         BlockPos pos, net.minecraft.core.Direction direction) {
+        return state.getValue(LIT) ? 15 : 0;
+    }
+
+    @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos,
                      net.minecraft.util.RandomSource random) {
         if (state.getValue(LIT)) {
