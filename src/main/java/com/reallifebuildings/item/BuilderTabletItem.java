@@ -13,6 +13,9 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 
@@ -88,6 +91,14 @@ public class BuilderTabletItem extends Item {
                 level.setBlock(localPos(base, right, forward, x, 4, z), roof, 3);
             }
         }
+        // Install a real two-block vanilla door in the front entrance.
+        BlockState doorLower = Blocks.OAK_DOOR.defaultBlockState()
+                .setValue(DoorBlock.FACING, forward)
+                .setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
+        BlockState doorUpper = doorLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
+        level.setBlock(localPos(base, right, forward, 3, 1, 0), doorLower, 3);
+        level.setBlock(localPos(base, right, forward, 3, 2, 0), doorUpper, 3);
+
         // Interior partitions divide the floor plan into four functional zones.
         for (int y = 1; y <= 3; y++) {
             for (int z = 1; z <= 7; z++) {
