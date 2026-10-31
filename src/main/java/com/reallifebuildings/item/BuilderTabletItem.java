@@ -99,6 +99,12 @@ public class BuilderTabletItem extends Item {
         level.setBlock(localPos(base, right, forward, 3, 1, 0), doorLower, 3);
         level.setBlock(localPos(base, right, forward, 3, 2, 0), doorUpper, 3);
 
+        // Built-in porch lights start switched on and remain manually controllable.
+        BlockState porchLight = BuildingBlocks.SMART_LAMP.get().defaultBlockState()
+                .setValue(com.reallifebuildings.block.SmartLampBlock.LIT, true);
+        level.setBlock(localPos(base, right, forward, 1, 3, 0), porchLight, 3);
+        level.setBlock(localPos(base, right, forward, 5, 3, 0), porchLight, 3);
+
         // Interior partitions divide the floor plan into four functional zones.
         for (int y = 1; y <= 3; y++) {
             for (int z = 1; z <= 7; z++) {
