@@ -4,6 +4,8 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import com.reallifebuildings.block.BuildingBlocks;
 
 public class BuilderTabletScreen extends Screen {
     private int selectedPage = 0;
@@ -50,14 +52,14 @@ public class BuilderTabletScreen extends Screen {
 
         if (selectedPage == 0) {
             graphics.drawString(this.font, "СТРОИТЕЛЬНЫЕ МАТЕРИАЛЫ", centerX - 145, centerY - 32, 0xFFFFFF);
-            graphics.drawString(this.font, "Бетонная панель", centerX - 135, centerY - 12, 0xD8D8D8);
-            graphics.drawString(this.font, "Фасадное стекло", centerX - 135, centerY + 3, 0xD8D8D8);
-            graphics.drawString(this.font, "Дубовый пол", centerX - 135, centerY + 18, 0xD8D8D8);
-            graphics.drawString(this.font, "Красный кирпич", centerX + 20, centerY - 12, 0xD8D8D8);
-            graphics.drawString(this.font, "Гладкая каменная панель", centerX + 20, centerY + 3, 0xD8D8D8);
-            graphics.drawString(this.font, "Тёмный бетон", centerX + 20, centerY + 18, 0xD8D8D8);
-            graphics.drawString(this.font, "Дерево интерьера", centerX - 135, centerY + 38, 0xD8D8D8);
-            graphics.drawString(this.font, "Плитка террасы", centerX + 20, centerY + 38, 0xD8D8D8);
+            drawMaterial(graphics, BuildingBlocks.CONCRETE_PANEL.get(), "Бетонная панель", centerX - 145, centerY - 13);
+            drawMaterial(graphics, BuildingBlocks.FACADE_GLASS.get(), "Фасадное стекло", centerX - 145, centerY + 6);
+            drawMaterial(graphics, BuildingBlocks.OAK_FLOOR.get(), "Дубовый пол", centerX - 145, centerY + 25);
+            drawMaterial(graphics, BuildingBlocks.RED_BRICK.get(), "Красный кирпич", centerX + 10, centerY - 13);
+            drawMaterial(graphics, BuildingBlocks.SMOOTH_STONE_PANEL.get(), "Гладкая каменная панель", centerX + 10, centerY + 6);
+            drawMaterial(graphics, BuildingBlocks.DARK_CONCRETE.get(), "Тёмный бетон", centerX + 10, centerY + 25);
+            drawMaterial(graphics, BuildingBlocks.INTERIOR_WOOD.get(), "Дерево интерьера", centerX - 145, centerY + 44);
+            drawMaterial(graphics, BuildingBlocks.TERRACE_TILE.get(), "Плитка террасы", centerX + 10, centerY + 44);
             graphics.drawCenteredString(this.font, "Рецепты доступны через верстак", centerX, centerY + 66, 0xA5D6A7);
         } else if (selectedPage == 1) {
             if (selectedProject == 0) {
@@ -85,6 +87,12 @@ public class BuilderTabletScreen extends Screen {
             graphics.drawCenteredString(this.font, "Звонок: ПКМ воспроизводит сигнал", centerX, centerY + 96, 0xA5D6A7);
         }
         super.render(graphics, mouseX, mouseY, partialTick);
+    }
+
+    private void drawMaterial(GuiGraphics graphics, net.minecraft.world.level.block.Block block,
+                              String label, int x, int y) {
+        graphics.renderItem(new ItemStack(block), x, y - 2);
+        graphics.drawString(this.font, label, x + 22, y + 2, 0xD8D8D8);
     }
 
     private void renderHouseBlueprint(GuiGraphics graphics, int x, int y) {
