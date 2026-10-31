@@ -32,6 +32,8 @@ public final class BuildingBlocks {
             () -> new Block(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> KITCHEN_COUNTER = register("kitchen_counter",
             () -> new KitchenCounterBlock(Block.Properties.copy(Blocks.SMOOTH_STONE)));
+    public static final RegistryObject<Block> MICROWAVE = register("microwave",
+            () -> new KitchenApplianceBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> TERRACE_TILE = register("terrace_tile",
             () -> new Block(Block.Properties.copy(Blocks.STONE_BRICKS)));
     public static final RegistryObject<Block> SMART_LAMP = register("smart_lamp", SmartLampBlock::new);
