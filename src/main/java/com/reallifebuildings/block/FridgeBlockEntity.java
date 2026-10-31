@@ -42,7 +42,11 @@ public class FridgeBlockEntity extends BlockEntity implements Container, MenuPro
         if (!result.isEmpty()) setChanged();
         return result;
     }
-    @Override public ItemStack removeItemNoUpdate(int slot) { return ContainerHelper.takeItem(items, slot); }
+    @Override public ItemStack removeItemNoUpdate(int slot) {
+        ItemStack result = ContainerHelper.takeItem(items, slot);
+        if (!result.isEmpty()) setChanged();
+        return result;
+    }
     @Override public void setItem(int slot, ItemStack stack) {
         items.set(slot, stack);
         if (stack.getCount() > getMaxStackSize()) stack.setCount(getMaxStackSize());
