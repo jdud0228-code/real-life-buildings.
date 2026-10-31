@@ -23,6 +23,16 @@ public class RealLifeBuildings {
             ITEMS.register("builder_tablet", () -> new BuilderTabletItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> COTTAGE_BLUEPRINT =
             ITEMS.register("cottage_blueprint", () -> new CottageBlueprintItem(new Item.Properties()));
+    public static final RegistryObject<Item> SANDWICH = ITEMS.register("sandwich",
+            () -> new Item(new Item.Properties().food(new net.minecraft.world.food.FoodProperties.Builder()
+                    .nutrition(8).saturationMod(0.8F).build())));
+    public static final RegistryObject<Item> CANNED_FOOD = ITEMS.register("canned_food",
+            () -> new Item(new Item.Properties().food(new net.minecraft.world.food.FoodProperties.Builder()
+                    .nutrition(6).saturationMod(0.6F).build())));
+    public static final RegistryObject<Item> FRUIT_JUICE = ITEMS.register("fruit_juice",
+            () -> new Item(new Item.Properties().craftRemainder(net.minecraft.world.item.Items.GLASS_BOTTLE)
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(4).saturationMod(0.5F).alwaysEat().build())));
 
     public RealLifeBuildings() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -36,6 +46,9 @@ public class RealLifeBuildings {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(BUILDER_TABLET);
             event.accept(COTTAGE_BLUEPRINT);
+            event.accept(SANDWICH);
+            event.accept(CANNED_FOOD);
+            event.accept(FRUIT_JUICE);
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(BuildingBlocks.CONCRETE_PANEL);
