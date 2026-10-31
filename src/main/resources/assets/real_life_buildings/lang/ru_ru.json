@@ -19,5 +19,6 @@
   "block.real_life_buildings.doorbell": "Дверной звонок",
   "container.real_life_buildings.wardrobe": "Шкаф — хранилище",
   "block.real_life_buildings.microwave": "Микроволновка",
-  "block.real_life_buildings.fridge": "Холодильник"
+  "block.real_life_buildings.fridge": "Холодильник",
+  "container.real_life_buildings.fridge": "Холодильник"
 }
