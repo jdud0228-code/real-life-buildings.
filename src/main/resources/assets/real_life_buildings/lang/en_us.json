@@ -23,5 +23,8 @@
   "container.real_life_buildings.fridge": "Refrigerator",
   "item.real_life_buildings.sandwich": "Sandwich",
   "item.real_life_buildings.canned_food": "Canned Food",
-  "item.real_life_buildings.fruit_juice": "Fruit Juice"
+  "item.real_life_buildings.fruit_juice": "Fruit Juice",
+  "message.real_life_buildings.microwave_busy": "The microwave is already running",
+  "message.real_life_buildings.microwave_cooked": "Ready: %s",
+  "message.real_life_buildings.microwave_no_food": "Put raw food in your inventory and try again"
 }
