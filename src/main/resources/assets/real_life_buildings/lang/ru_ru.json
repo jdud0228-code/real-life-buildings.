@@ -23,5 +23,8 @@
   "container.real_life_buildings.fridge": "Холодильник",
   "item.real_life_buildings.sandwich": "Сэндвич",
   "item.real_life_buildings.canned_food": "Консервы",
-  "item.real_life_buildings.fruit_juice": "Фруктовый сок"
+  "item.real_life_buildings.fruit_juice": "Фруктовый сок",
+  "message.real_life_buildings.microwave_busy": "Микроволновка уже работает",
+  "message.real_life_buildings.microwave_cooked": "Готово: %s",
+  "message.real_life_buildings.microwave_no_food": "Положи сырую еду в инвентарь и нажми ещё раз"
 }
