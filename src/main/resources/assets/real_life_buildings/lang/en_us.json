@@ -19,5 +19,6 @@
   "block.real_life_buildings.doorbell": "Doorbell",
   "container.real_life_buildings.wardrobe": "Wardrobe Storage",
   "block.real_life_buildings.microwave": "Microwave",
-  "block.real_life_buildings.fridge": "Refrigerator"
+  "block.real_life_buildings.fridge": "Refrigerator",
+  "container.real_life_buildings.fridge": "Refrigerator"
 }
