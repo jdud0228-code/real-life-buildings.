@@ -1,5 +1,6 @@
 {
   "item.real_life_buildings.builder_tablet": "Builder Tablet",
+  "item.real_life_buildings.cottage_blueprint": "Country Cottage Blueprint",
   "key.real_life_buildings.open_tablet": "Open Builder Tablet",
   "key.categories.real_life_buildings": "REAL LIFE BUILDINGS",
   "block.real_life_buildings.concrete_panel": "Concrete Panel",
@@ -14,5 +15,6 @@
   "block.real_life_buildings.smart_lamp": "Smart Lamp",
   "block.real_life_buildings.living_room_chair": "Living Room Chair",
   "block.real_life_buildings.sofa": "Sofa",
-  "block.real_life_buildings.wardrobe": "Wardrobe"
+  "block.real_life_buildings.wardrobe": "Wardrobe",
+  "block.real_life_buildings.doorbell": "Doorbell"
 }
