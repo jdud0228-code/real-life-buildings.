@@ -14,6 +14,10 @@ public final class ModBlockEntities {
             TYPES.register("wardrobe", () -> BlockEntityType.Builder
                     .of(WardrobeBlockEntity::new, BuildingBlocks.WARDROBE.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<FridgeBlockEntity>> FRIDGE =
+            TYPES.register("fridge", () -> BlockEntityType.Builder
+                    .of(FridgeBlockEntity::new, BuildingBlocks.FRIDGE.get()).build(null));
+
     private ModBlockEntities() { }
     public static void register(IEventBus bus) { TYPES.register(bus); }
 }
