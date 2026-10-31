@@ -20,5 +20,8 @@
   "container.real_life_buildings.wardrobe": "Шкаф — хранилище",
   "block.real_life_buildings.microwave": "Микроволновка",
   "block.real_life_buildings.fridge": "Холодильник",
-  "container.real_life_buildings.fridge": "Холодильник"
+  "container.real_life_buildings.fridge": "Холодильник",
+  "item.real_life_buildings.sandwich": "Сэндвич",
+  "item.real_life_buildings.canned_food": "Консервы",
+  "item.real_life_buildings.fruit_juice": "Фруктовый сок"
 }
