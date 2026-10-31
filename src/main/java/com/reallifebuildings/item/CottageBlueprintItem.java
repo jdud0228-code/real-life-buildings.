@@ -75,6 +75,12 @@ public class CottageBlueprintItem extends Item {
         level.setBlock(at(base, right, forward, 4, 2, 0),
                 doorLower.setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER), 3);
 
+        // Exterior entrance lights are on when the cottage is completed.
+        BlockState porchLight = BuildingBlocks.SMART_LAMP.get().defaultBlockState()
+                .setValue(com.reallifebuildings.block.SmartLampBlock.LIT, true);
+        level.setBlock(at(base, right, forward, 2, 3, 0), porchLight, 3);
+        level.setBlock(at(base, right, forward, 6, 3, 0), porchLight, 3);
+
         // Simple interior partitions on both floors.
         for (int y : new int[]{1, 2, 3, 4, 6, 7, 8}) {
             int divider = y < 5 ? 5 : 4;
